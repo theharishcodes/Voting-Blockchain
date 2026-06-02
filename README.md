@@ -275,7 +275,7 @@ The Problem Statement had demanded to build a simple blockchain-based voting sys
 Type this command in the terminal : 
 ```
     // First type this command.
-    g++ Voting_Blockchain.cpp sha256.cpp -o Voting_Blockchain.exe
+    g++ Voting_Blockchain.cpp sha256.c -o Voting_Blockchain.exe
 
     // Clik enter and after debugging, type this command.
     .\Voting_Blockchain.exe
