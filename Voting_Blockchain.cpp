@@ -385,7 +385,7 @@ void start(blockchain& voting_blkchn)
         {
             start(voting_blkchn);
         }
-        else if (input_submenu == 3)
+        else
         {
             Exit();
         }
@@ -407,7 +407,7 @@ void start(blockchain& voting_blkchn)
         {
             start(voting_blkchn);
         }
-        else if (input_submenu == 3)
+        else
         {
             Exit();
         }
@@ -432,7 +432,7 @@ void start(blockchain& voting_blkchn)
         {
             start(voting_blkchn);
         }
-        else if (input_submenu == 3)
+        else
         {
             Exit();
         }
@@ -461,7 +461,7 @@ void start(blockchain& voting_blkchn)
         {
             start(voting_blkchn);
         }
-        else if (input_submenu == 3)
+        else
         {
             Exit();
         }
@@ -481,7 +481,7 @@ void start(blockchain& voting_blkchn)
         {
             start(voting_blkchn);
         }
-        else if (input_submenu == 3)
+        else
         {
             Exit();
         }
