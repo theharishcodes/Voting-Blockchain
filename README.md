@@ -288,6 +288,6 @@ Type this command in the terminal :
 - As anyone can see who has voted whom using View Blockchain option, we can actually convert voterid into a hash using sha256 and then store it at voter_id_00.
 
 #### Author
-Harish Lunge<br>First Year,<br>Ocean Engineering and Technology,<br>IIT Kharagpur
+Harish Lunge<br>First Year,<br>Ocean Engineering and Naval Architechture,<br>IIT Kharagpur
 
 ### Thank You!
