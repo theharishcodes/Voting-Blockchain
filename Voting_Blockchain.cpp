@@ -136,6 +136,42 @@ class block
 
 };
 
+bool Voting_Rules_Contract(vector<block>& voteblock, string voterid, string candidate)
+{
+    if (valid_reg_voter_id(voterid) && valid_candidate(candidate))
+    {
+        if(voteblock.size()==1)
+        {
+            return true;
+        }
+
+        // if its not the index 1 block, i.e if it is not the block after genesis.
+        bool is_duplicate = false;
+        for(int i = 1; i < voteblock.size(); i++)
+        {
+            if (voteblock[i].get_vote_data().get_voter_id_00() == voterid)
+            {
+                is_duplicate = true;
+                break;
+            }
+        }
+
+        if(!is_duplicate)
+        {
+            return true;
+        }
+        else
+        {
+            cout << "You have already voted! We will not count this vote.\n";
+            return false;
+        }
+    }
+    else
+    {
+        return false;
+    }
+}
+
 class blockchain
 {
     private :
@@ -148,38 +184,12 @@ class blockchain
         
         if (indexforuse != 0)
         {
-            if(valid_reg_voter_id(voter_id) && valid_candidate(candidate))
-            {   
-                if(indexforuse != 1)
-                {
-                    bool is_duplicate = false;
-                    for(int i = 1; i < voteblockchain.size(); i++)
-                    {
-                        if (voteblockchain[i].get_vote_data().get_voter_id_00() == voter_id)
-                        {
-                            is_duplicate = true;
-                            break;
-                        }
-                    }
-                    if(!is_duplicate)
-                    {
-                        voting_data vdata{voter_id, candidate};
-                        block bl{indexforuse++, vdata, voteblockchain.back().get_currentHash()};
-                        voteblockchain.push_back(bl);
-                    }
-                    else
-                    {
-                        cout << "You have already voted!\n\n";
-                    }
-                }
-                else
-                {
-                    voting_data vdata{voter_id, candidate};
-                    block bl{indexforuse++, vdata, voteblockchain.back().get_currentHash()};
-                    voteblockchain.push_back(bl);
-                }
+            if(Voting_Rules_Contract(voteblockchain, voter_id, candidate))
+            {
+                voting_data vdata{voter_id, candidate};
+                block bl{indexforuse++, vdata, voteblockchain.back().get_currentHash()};
+                voteblockchain.push_back(bl);
             }
-            
         }
         else // For Genesis
         {
@@ -347,8 +357,11 @@ void Register_Vote(blockchain& voting_blkchn)
     if(voting_blkchn.get_blockchainsize() > voting_vector_before_size)
     {
         cout << "Vote Added!\n";
+
         // cout << "Vote Block Hash : " << voting_blkchn.get_block_at_idx(voting_blkchn.get_blockchainsize() - 1).get_currentHash() << "\n";
         // This current hash can be used as reciept for common user.
+
+        // system("cls"); // This can be used so the current voter don't see the vote of previous voter on screen.
     }
 }
 void start(blockchain& voting_blkchn)
@@ -409,7 +422,7 @@ void start(blockchain& voting_blkchn)
             cout << "Total Vote Counting :\n";
             cout << "Raj : " << count[0] << "\n";
             cout << "Sarthak : " << count[1] << "\n";
-            cout << "Mohan : " << count[2] << "\n\n";
+            cout << "Mohan : " << count[2] << "\n";
 
             cout << "\nSubmenu :\n1. Count Votes Again\n2. Return To Main Menu\n3. Exit\nChoose a menu to proceed with and Enter its number : ";
             cin >> input_submenu;
