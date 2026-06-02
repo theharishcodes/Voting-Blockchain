@@ -500,7 +500,7 @@ int main()
     cout << "Your Candidates are :\n1. Raj\n2. Sarthak\n3. Mohan\n";
     blockchain Voting;
     Voting.create_genesis_block();
-    Display(Voting);
+    Display(Voting); // This will start User Interface.
 
 
     /* Manual Internal Methods used to see if the code runs.
