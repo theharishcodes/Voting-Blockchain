@@ -63,8 +63,6 @@ The Problem Statement had demanded to build a simple blockchain-based voting sys
     }
     ```
 
-    <img src="Screenshots/Voter_ID_Registered.png" width="700"> <br>
-    <img src="Screenshots/Voter_ID_Not_Registered.png" width="700">
     
     </details>
     
@@ -124,8 +122,7 @@ The Problem Statement had demanded to build a simple blockchain-based voting sys
     }
     ```
 
-    <img src="Screenshots/Voter_ID_Registered.png" width="700"> <br>
-    <img src="Screenshots/Voter_ID_Not_Registered.png" width="700">
+    
     
     </details>
     
@@ -228,8 +225,7 @@ The Problem Statement had demanded to build a simple blockchain-based voting sys
     };
     ```
 
-    <img src="Screenshots/Voter_ID_Registered.png" width="700"> <br>
-    <img src="Screenshots/Voter_ID_Not_Registered.png" width="700">
+
     
     </details>
     
@@ -249,9 +245,6 @@ The Problem Statement had demanded to build a simple blockchain-based voting sys
     }
     ```
 
-    <img src="Screenshots/Voter_ID_Registered.png" width="700"> <br>
-    <img src="Screenshots/Voter_ID_Not_Registered.png" width="700">
-    
     </details>
     
 6. #### Block Linking Through Previous Hash
